@@ -1,0 +1,23 @@
+{
+	"name": "fsext",
+	"version": "0.0.1",
+	"description": "finding the total for file formats in a folder and all included subfolders recursive",
+	"preferGlobal": "false",
+	"bin": { "fsext": "./bin/fsext.js" },
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"body-parser": "1.10.0",
+		"express": "4.10.6",
+		"lodash-node": "*",
+		"q": "*",
+		"walkdir": "*",
+		"commander": "*",
+		"chai": "*",
+		"mocha": "*",
+		"sinon": "*",
+		"sinon-chai": "*",
+		"sandboxed-module": "*"
+	}
+}
