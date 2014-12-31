@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var walker = require('../lib/walker.js');
+var walkerohioranger = require('../lib/walkerohioranger.js');
 var fsext = require('../lib/fsext.js');
 var commander = require('commander');
 
@@ -28,14 +28,14 @@ if (!commander.readpath) {
 
 function readFolders(){
 	var filepath = commander.readpath
-	var excludepaths = commander.exclude;
+	var exclude = commander.exclude;
 	var writefilepath = commander.writepath ? commander.writepath : commander.readpath;;
 	var matchfileformats = commander.match;
 
-	walker(filepath, function(files){
-		fsext(files, writefilepath, excludepaths,matchfileformats)()
+	walkerohioranger(filepath,exclude,matchfileformats, function(files){
+		fsext(files, writefilepath,matchfileformats)()
 			.then(function(){
-				console.log('\nresults returned and written to: ' + writefilepath);
+				console.log('\nresults returned and written successfully');
 			})
 	})
 }
