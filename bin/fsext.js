@@ -27,12 +27,12 @@ if (!commander.readpath) {
 }
 
 function readFolders(){
-	var filepath = commander.readpath
+	var readfilepath = commander.readpath
 	var exclude = commander.exclude;
 	var writefilepath = commander.writepath ? commander.writepath : commander.readpath;;
 	var matchfileformats = commander.match;
 
-	walkerohioranger(filepath,exclude,matchfileformats, function(files){
+	walkerohioranger(readfilepath,exclude,matchfileformats, function(files){
 		fsext(files, writefilepath,matchfileformats)()
 			.then(function(){
 				console.log('\nresults returned and written successfully');
