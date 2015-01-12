@@ -15,7 +15,7 @@ var exclude = []; // array of folder or file names to exclude ie ['node_modules'
 app.listen(app.get('port'), function(){
 	console.log('Express server listening on port ' + app.get('port'));
 	walkerohioranger(readfilepath,exclude,matchfileformats,function(files){
-		fsext(files, writefilepath, matchfileformats)()
+		fsext(files, writefilepath)()
 			.fin(function(){
 				console.log('\nresults returned and written successfully');
 			})

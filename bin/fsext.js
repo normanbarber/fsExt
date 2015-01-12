@@ -32,14 +32,14 @@ function readFolders(){
 	var writefilepath = commander.writepath ? commander.writepath : commander.readpath;;
 	var matchfileformats = commander.match;
 
-	walkerohioranger(readfilepath,exclude,matchfileformats,function(files){
+	walkerohioranger(readfilepath,exclude,function(files){
 		fsext(files, writefilepath, matchfileformats)()
-            .fin(function(){
-                console.log('\nresults returned and written successfully');
-            })
-            .fail(function(error){
-                console.log(error);
-            })
+			.fin(function(){
+				console.log('\nresults returned and written successfully');
+			})
+			.fail(function(error){
+				console.log(error);
+			})
 	})
 }
 readFolders();
